@@ -34,9 +34,9 @@ export const WaabotInfoCard = () => {
 
 
                 <Button
-                    className="px-6 py-2 bg-gray-700  text-gray-900
+                    className="px-6 py-2  bg-gray-200  dark:bg-gray-700  text-gray-900
                       dark:text-white rounded-lg shadow 
-                       dark:hover:bg-[#26B7A4] hover:text-white w-64 h-16"
+                       dark:hover:bg-[#26B7A4] hover:text-[#26B7A4] w-64 h-16"
                 >
                     🎉 Start Free Trial
                 </Button>
