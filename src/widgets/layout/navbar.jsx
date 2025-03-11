@@ -8,6 +8,7 @@ import {
 import { ThemeContext } from "@/context/ThemeContext";
 import { SunIcon, MoonIcon } from "@heroicons/react/24/solid";
 import { CNAME } from "@/utilities/constants";
+//hi
 
 export function NavBar() {
     const { theme, toggleTheme } = useContext(ThemeContext);
