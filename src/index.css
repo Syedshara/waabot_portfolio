@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: 'MyCustomFont';
+    src: url('/src/assets/fonts/my-font.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-4px);
+    }
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delay {
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+
+@keyframes floatFlip {
+    0%, 100% {
+        transform: scaleX(-1) translateY(0);
+    }
+    50% {
+        transform: scaleX(-1) translateY(-4px);
+    }
+}
+
+.animate-float-flip {
+    animation: floatFlip 3s ease-in-out infinite;
+}
+
