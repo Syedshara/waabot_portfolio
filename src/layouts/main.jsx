@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NavBar } from "@/widgets/layout";
-import { WaabotCard } from "@/widgets/cards";
-import { WaabotInfoCard } from "@/widgets/cards";
+import { WaabotCard, WaabotInfoCard } from "@/widgets/cards";
 
 export const Main = () => {
     const [scrollY, setScrollY] = useState(0);
@@ -19,22 +18,22 @@ export const Main = () => {
                 <NavBar />
             </div>
 
-            {/* Main Content (Zoom Out + Fade) */}
+            {/* Main Content (Stronger Parallax) */}
             <div
-                className="flex flex-col md:flex-row justify-center items-center gap-20 min-h-screen transition-all duration-700 ease-out"
+                className="flex flex-col md:flex-row justify-center items-center gap-20 min-h-screen transition-transform duration-700 ease-out"
                 style={{
-                    transform: `scale(${1 - scrollY * 0.0005}) translateY(-${scrollY * 0.1}px)`,
-                    opacity: `${1 - scrollY * 0.002}`
+                    transform: `scale(${1 - Math.min(scrollY * 0.0005, 0.12)}) translateY(-${Math.min(scrollY * 0.15, 120)}px)`, // More zoom & lift effect
+                    opacity: `${1 - Math.min(scrollY * 0.003, 0.4)}`, // More gradual fade
                 }}
             >
                 <WaabotInfoCard />
                 <WaabotCard />
             </div>
 
-            {/* Next Content Section (Smoother Transition) */}
+            {/* Next Section (More Gradual Reveal) */}
             <div
                 className="w-full min-h-[90vh] flex justify-center items-center bg-lightBg dark:bg-darkBg transition-opacity duration-700 ease-out"
-                style={{ opacity: Math.min(1, scrollY / 300) }}
+                style={{ opacity: Math.min(1, scrollY / 250) }} // Faster appearance
             >
                 <div className="max-w-3xl text-center">
                     <h2 className="text-4xl font-bold text-gray-900 dark:text-white">Next Section Content</h2>
