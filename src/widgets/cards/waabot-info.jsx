@@ -1,18 +1,26 @@
+import React, { useState, useEffect } from "react";
 import { Button } from "@material-tailwind/react";
-import React from "react";
 
 export const WaabotInfoCard = () => {
-    return (
-        <div className="max-w-2xl py-6 px-4 mt-5  text-start">
+    const [scrollY, setScrollY] = useState(0);
 
-            <div>
-                <div className="text-3xl  font-bold text-gray-900 dark:text-white">Automate, Engage, and Grow on WhatsApp</div>
+    useEffect(() => {
+        const handleScroll = () => setScrollY(window.scrollY);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    return (
+        <div className="max-w-2xl py-6 px-4 mt-5 text-start relative">
+            <div style={{ transform: `translateY(${scrollY * -0.2}px)`, transition: "transform 0.2s ease-out" }}>
+                <div className="text-3xl font-bold text-gray-900 dark:text-white">Automate, Engage, and Grow on WhatsApp</div>
                 <div className="mt-2 text-[#26B7A4]">
                     Smart WhatsApp Automation Built for Businesses That Scale
                 </div>
             </div>
 
-            <div className="mt-12 text-left space-y-3 text-gray-700 dark:text-gray-300">
+            <div className="mt-12 text-left space-y-3 text-gray-700 dark:text-gray-300"
+                style={{ transform: `translateY(${scrollY * -0.15}px)`, transition: "transform 0.3s ease-out" }}>
                 <li>💬 <strong>Effortless Conversations</strong> - Automate customer interactions with a flexible, no-code chatbot.</li>
                 <li>⚡ <strong>Dynamic Workflows</strong> - Customize message flows on the fly—no developer required!</li>
                 <li>📊 <strong>Real-Time Insights</strong> - Track responses, orders, and customer behavior with detailed analytics.</li>
@@ -20,23 +28,16 @@ export const WaabotInfoCard = () => {
                 <li>🛒 <strong>E-commerce Ready</strong> - Seamlessly handle product catalogs, orders, and payments within WhatsApp.</li>
             </div>
 
-
-
-            <div className="mt-12 flex flex-col md:flex-row gap-3 justify-start">
+            <div className="mt-12 flex flex-col md:flex-row gap-3 justify-start"
+                style={{ transform: `translateY(${scrollY * -0.1}px)`, transition: "transform 0.4s ease-out" }}>
                 <Button
-
                     className="px-6 py-2 bg-[#26B7A4] text-white rounded-lg shadow hover:bg-transparent dark:text-black border border-[#26B7A4] hover:!text-[#26B7A4] w-64 h-16"
-
-
                 >
                     Book a Live Demo
                 </Button>
 
-
                 <Button
-                    className="px-6 py-2  bg-gray-200  dark:bg-gray-700  text-gray-900
-                      dark:text-white rounded-lg shadow 
-                       dark:hover:bg-[#26B7A4] hover:text-[#26B7A4] w-64 h-16"
+                    className="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg shadow dark:hover:bg-[#26B7A4] hover:text-[#26B7A4] w-64 h-16"
                 >
                     🎉 Start Free Trial
                 </Button>

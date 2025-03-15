@@ -9,6 +9,12 @@
     font-weight: normal;
     font-style: normal;
   }
+  @font-face {
+    font-family: 'MyCustomFont2';
+    src: url('/src/assets/fonts/my-font2.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
   
   @keyframes float {
     0%, 100% {

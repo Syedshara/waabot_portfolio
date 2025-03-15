@@ -18,7 +18,7 @@ export function NavBar() {
             <div className="flex flex-col justify-around gap-6 md:flex-row md:items-center">
                 <div>
                     <Typography variant="h2" className="text-black dark:text-white">
-                        <span className="text-[#26B7A4]">{CNAME.charAt(0)}</span>
+                        <span className="text-[#26B7A4] font-custom2">{CNAME.charAt(0)}</span>
                         {CNAME.slice(1, -1)}
                         <span className="text-[#26B7A4]">{CNAME.charAt(CNAME.length - 1)}</span>
                     </Typography>

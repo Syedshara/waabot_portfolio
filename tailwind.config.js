@@ -12,10 +12,12 @@ module.exports = withMT({
         darkBg: "#222831",
         lightText: "#1E293B",
         darkText: "#F8FAFC",
+        textColor: "#26B7A4",
 
       },
       fontFamily: {
         custom: ['MyCustomFont', 'sans-serif'],
+        custom2: ['MyCustomFont2', 'sans-serif'],
       },
     },
   },
