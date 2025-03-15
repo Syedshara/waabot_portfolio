@@ -7,20 +7,20 @@ export const Main = () => {
     return (
         <ParallaxProvider>
             <div className="w-screen min-h-screen bg-lightBg dark:bg-darkBg bg-fixed">
-                {/* Fixed Navbar */}
+
                 <div className="fixed top-0 w-full z-50">
                     <NavBar />
                 </div>
 
-                {/* Main Content (Parallax Zoom & Lift) */}
-                <Parallax speed={-10} scale={[1, 0.85]} opacity={[1, 0.6]}>
+
+                <Parallax speed={10} scale={[0.8, 1.2]} opacity={[1, 0.6]}>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-20 min-h-screen">
                         <WaabotInfoCard />
                         <WaabotCard />
                     </div>
                 </Parallax>
 
-                {/* Next Section (Gradual Reveal) */}
+
                 <Parallax speed={5} opacity={[0, 1]}>
                     <div className="w-full min-h-[90vh] flex justify-center items-center bg-lightBg dark:bg-darkBg">
                         <div className="max-w-3xl text-center">

@@ -5,8 +5,19 @@ export const WaabotInfoCard = () => {
     const [scrollY, setScrollY] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => setScrollY(window.scrollY);
-        window.addEventListener("scroll", handleScroll);
+        let ticking = false;
+
+        const handleScroll = () => {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    setScrollY(window.scrollY);
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -14,8 +25,9 @@ export const WaabotInfoCard = () => {
         <div className="max-w-2xl py-6 px-4 mt-5 text-start relative">
             <div
                 style={{
-                    transform: `translateY(${Math.min(scrollY * 0.3, 70)}px)`, // Increased effect
-                    transition: "transform 0.3s ease-out",
+                    transform: `translateY(${Math.min(scrollY * 0.2, 50)}px)`,
+                    transition: "transform 0.5s ease-out",
+                    willChange: "transform"
                 }}
             >
                 <div className="text-3xl font-bold text-gray-900 dark:text-white">
@@ -29,8 +41,9 @@ export const WaabotInfoCard = () => {
             <div
                 className="mt-12 text-left space-y-3 text-gray-700 dark:text-gray-300"
                 style={{
-                    transform: `translateY(${Math.min(scrollY * 0.3, 70)}px)`, // Stronger motion
-                    transition: "transform 0.3s ease-out",
+                    transform: `translateY(${Math.min(scrollY * 0.2, 50)}px)`,
+                    transition: "transform 0.5s ease-out",
+                    willChange: "transform"
                 }}
             >
                 <li>💬 <strong>Effortless Conversations</strong> - Automate customer interactions with a flexible, no-code chatbot.</li>
@@ -43,8 +56,9 @@ export const WaabotInfoCard = () => {
             <div
                 className="mt-12 flex flex-col md:flex-row gap-3 justify-start"
                 style={{
-                    transform: `translateY(${Math.min(scrollY * 0.2, 50)}px)`, // More visible movement
-                    transition: "transform 0.3s ease-out",
+                    transform: `translateY(${Math.min(scrollY * 0.15, 40)}px)`,
+                    transition: "transform 0.5s ease-out",
+                    willChange: "transform"
                 }}
             >
                 <Button
