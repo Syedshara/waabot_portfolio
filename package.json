@@ -12,12 +12,15 @@
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "@material-tailwind/react": "^2.1.10",
+    "@react-spring/web": "^9.7.5",
     "flowbite-react": "^0.10.2",
     "heroicons": "^2.2.0",
     "lottie-react": "^2.4.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-router-dom": "^7.3.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.3.0",
+    "react-scroll-parallax": "^3.4.5",
+    "simple-parallax-js": "^6.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
