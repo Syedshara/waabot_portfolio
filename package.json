@@ -19,9 +19,11 @@
     "lottie-react": "^2.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-parallax-tilt": "^1.7.286",
     "react-router-dom": "^7.3.0",
     "react-scroll-parallax": "^3.4.5",
-    "simple-parallax-js": "^6.0.1"
+    "simple-parallax-js": "^6.0.1",
+    "tailwind-scrollbar-hide": "^2.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

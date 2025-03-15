@@ -23,5 +23,6 @@ module.exports = withMT({
   },
   plugins: [
     flowbite.plugin(),
+    require('tailwind-scrollbar-hide'),
   ],
 });
